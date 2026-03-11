@@ -71,13 +71,11 @@
     }
     .dept-list li:nth-child(2)::before { content: "ii. "; }
     .dept-list li:nth-child(3)::before { content: "iii. "; }
-
     .sub-list {
       list-style: square;
       padding-left: 24px;
       margin-top: 4px;
     }
-
     .sub-list li {
       font-size: 0.9rem;
     }
@@ -152,14 +150,11 @@
   </style>
 </head>
 <body>
-
-  <h1>KYU — Universities &amp; Timetable</h1>
-
+  <h1>Different Universities &amp; Kyambogo Timetable</h1>
   <div class="container">
     <div class="universities">
       <div class="section-title">Universities in Uganda</div>
       <ul class="uni-list">
-
         <li><span>Kyambogo</span>
           <ul class="dept-list">
             <li>Mechanics</li>
@@ -167,7 +162,6 @@
             <li>Social Works</li>
           </ul>
         </li>
-
         <li><span>Makerere</span>
           <ul class="numbered-list">
             <li>Computing</li>
@@ -179,7 +173,6 @@
             </li>
           </ul>
         </li>
-
         <li><span>Mbarara</span>
           <ul class="circle-list">
             <li>Engineering</li>
@@ -187,11 +180,8 @@
             <li>Technology</li>
           </ul>
         </li>
-
       </ul>
     </div>
-
-    <!-- TIMETABLE SECTION -->
     <div class="timetable-wrapper">
       <div class="section-title">KYU Timetable</div>
       <table>
@@ -205,36 +195,30 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Row 1 -->
           <tr>
             <td colspan="2" class="cell-bitc">BITC</td>
             <td rowspan="2" class="cell-bis">BIS</td>
             <td class="cell-bitc">BITC</td>
             <td class="empty"></td>
           </tr>
-          <!-- Row 2 -->
           <tr>
             <td class="cell-bitc">BITC</td>
             <td class="cell-bis">BIS</td>
             <td class="cell-blis">BLIS</td>
             <td class="cell-blis">BLIS</td>
           </tr>
-          <!-- Row 3 -->
           <tr>
             <td colspan="2" class="cell-blis">BLIS</td>
             <td class="empty"></td>
             <td class="cell-bis">BIS</td>
             <td class="empty"></td>
           </tr>
-          <!-- Break -->
           <tr class="break-row">
             <td colspan="5">B R E A K</td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </div>
-
 </body>
 </html>
