@@ -1,220 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>University Info Page</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Georgia, serif;
-      background-color: #f5f0e8;
-      color: #1a1a1a;
-      padding: 40px 20px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border-bottom: 3px solid #1a1a1a;
-      padding-bottom: 10px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 50px;
-    }
-      .section-title {
-      font-size: 1.3rem;
-      font-weight: bold;
-      text-decoration: underline;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .uni-list {
-      list-style: disc;
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .uni-list > li {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    .uni-list > li span {
-      text-decoration: underline;
-    }
-    .dept-list {
-      list-style: none;
-      padding-left: 20px;
-      margin-top: 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .dept-list li {
-      font-size: 0.95rem;
-      font-weight: normal;
-    }
-    .dept-list li::before {
-      content: "i. ";
-      font-style: italic;
-    }
-    .dept-list li:nth-child(2)::before { content: "ii. "; }
-    .dept-list li:nth-child(3)::before { content: "iii. "; }
-    .sub-list {
-      list-style: square;
-      padding-left: 24px;
-      margin-top: 4px;
-    }
-    .sub-list li {
-      font-size: 0.9rem;
-    }
-    .numbered-list {
-      list-style: decimal;
-      padding-left: 24px;
-      margin-top: 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .numbered-list li {
-      font-size: 0.95rem;
-      font-weight: normal;
-    }
-    .circle-list {
-      list-style: circle;
-      padding-left: 24px;
-      margin-top: 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .circle-list li {
-      font-size: 0.95rem;
-      font-weight: normal;
-    }
-    .timetable-wrapper {
-      overflow-x: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 2px solid #1a1a1a;
-      font-family: Georgia, serif;
-    }
-    table caption {
-      font-size: 1.3rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-    thead th {
-      border: 2px solid #1a1a1a;
-      padding: 10px 14px;
-      text-align: center;
-      background-color: #1a1a1a;
-      color: #f5f0e8;
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
-    tbody td {
-      border: 2px solid #1a1a1a;
-      padding: 14px 10px;
-      text-align: center;
-      font-size: 1rem;
-      vertical-align: middle;
-    }
-    .break-row td {
-      text-align: center;
-      font-weight: bold;
-      letter-spacing: 3px;
-      font-size: 1rem;
-      background-color: #ddd5c0;
-      padding: 12px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Different Universities &amp; Kyambogo timetable</h1>
-  <div class="container">
-    <div class="universities">
-      <div class="section-title">Universities in Uganda</div>
-      <ul class="uni-list">
-        <li><span>Kyambogo</span>
-          <ul class="dept-list">
-            <li>Mechanics</li>
-            <li>Computing</li>
-            <li>Social Works</li>
-          </ul>
-        </li>
-        <li><span>Makerere</span>
-          <ul class="numbered-list">
-            <li>Computing</li>
-            <li>Medicine
-              <ul class="sub-list">
-                <li>Nursing</li>
-                <li>Surgery</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><span>Mbarara</span>
-          <ul class="circle-list">
-            <li>Engineering</li>
-            <li>Science</li>
-            <li>Technology</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="timetable-wrapper">
-      <div class="section-title">KYU Timetable</div>
-      <table>
-        <thead>
-          <tr>
-            <th>MON</th>
-            <th>TUE</th>
-            <th>WED</th>
-            <th>THUR</th>
-            <th>FRI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="2" class="cell-bitc">BITC</td>
-            <td rowspan="2" class="cell-bis">BIS</td>
-            <td class="cell-bitc">BITC</td>
-            <td class="empty"></td>
-          </tr>
-          <tr>
-            <td class="cell-bitc">BITC</td>
-            <td class="cell-bis">BIS</td>
-            <td class="cell-blis">BLIS</td>
-            <td class="cell-blis">BLIS</td>
-          </tr>
-          <tr>
-            <td colspan="2" class="cell-blis">BLIS</td>
-            <td class="empty"></td>
-            <td class="cell-bis">BIS</td>
-            <td class="empty"></td>
-          </tr>
-          <tr class="break-row">
-            <td colspan="5">B R E A K</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</body>
-</html>
+    <title>Rugby, the Gentleman's game</title>
+    </head>
+    <body>
+
+        <h1>Learn more about the beautiful game</h1>
+            <img src="images/rugga.jpg" alt="A player in action" width="500" style="display:block;margin:0 auto;max-width:100%;height:auto;">
+                <p>Rugby is a close-contact team sport that originated at Rugby School in England in the first half of the 19th century. 
+                    Rugby involves running with the ball in hand. In its most common form, referred to as Rugby Union, the game is played between two teams of 15 players each, using an oval-shaped ball on a rectangular field called a pitch. 
+                        The field has H-shaped goalposts at both ends. Rugby Union also has a variation called Rugby 7s, which is played with seven players on each team, known for its fast-paced and high-scoring nature and also the less popular Rugby 10s, which is played with ten players on each team, a middle ground between 15s and 7s.
+                            There also exists a 13-man variation of rugby referred to as Rugby League which is more fast-paced than its counterpart.
+                                Rugby is referred to as the Gentleman's Game because of its emphasis on fair play and sportsmanship. The game is known for its physicality, strategic depth, and strong traditions of respect and integrity.</p>
+                                    <img src="images/scrum.jpg" alt="A scrumdown" width="500" style="display:block;margin:0 auto;max-width:100%;height:auto;">
+
+                                        <hr>
+
+                                            <h2>Universities in Uganda</h2>
+                                                <ul>
+                                                        <li><u>Kyambogo</u>
+                                                                    <ol type="i">
+                                                                                    <li>Mechanics</li>
+                                                                                                    <li>Computing</li>
+                                                                                                                    <li>Social Works</li>
+                                                                                                                                </ol>
+                                                                                                                                        </li>
+                                                                                                                                                <li><u>Makerere</u>
+                                                                                                                                                            <ol>
+                                                                                                                                                                            <li>Computing</li>
+                                                                                                                                                                                            <li>Medicine
+                                                                                                                                                                                                                <ul>
+                                                                                                                                                                                                                                        <li>Nursing</li>
+                                                                                                                                                                                                                                                                <li>Surgery</li>
+                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                                                                                                                </ol>
+                                                                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                <li><u>Mbarara</u>
+                                                                                                                                                                                                                                                                                                                                            <ul>
+                                                                                                                                                                                                                                                                                                                                                            <li>Engineering</li>
+                                                                                                                                                                                                                                                                                                                                                                            <li>Science</li>
+                                                                                                                                                                                                                                                                                                                                                                                            <li>Technology</li>
+                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                        <hr>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                            <h2>KYU Timetable</h2>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <table border="1" cellpadding="10" cellspacing="0">
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <thead>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    <tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <th>MON</th>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <th>TUE</th>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <th>WED</th>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <th>THUR</th>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <th>FRI</th>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </thead>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <tbody>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td colspan="2">BITC</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td rowspan="2">BIS</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td>BITC</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td>BITC</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td>BIS</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td>BLIS</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td>BLIS</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td colspan="2">BLIS</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td>BIS</td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <td colspan="5" align="center"><b>B R E A K</b></td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </tbody>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </table>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </html>
